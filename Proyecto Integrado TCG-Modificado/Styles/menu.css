@@ -1,0 +1,386 @@
+
+/* Fuente medieval y colores antiguos */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  background: radial-gradient(ellipse at center, #3b2f1d 0%, #1b140d 100%);
+  background-image: url();
+  color: #f5deb3;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(to bottom, #4a2b0f, #2b1a0a);
+  color: #ffd700;
+  border-bottom: 3px solid #d4af37;
+  font-family: 'UnifrakturCook', cursive;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #fceabb;
+}
+
+/* Pantalla de inicio */
+.mazo-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+  flex-wrap: wrap;
+}
+
+.mazo-card {
+  background: #4b2c11;
+  color: #fff;
+  width: 260px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  border: 3px solid #c9a343;
+  box-shadow: 0 0 25px rgba(255,215,0,0.2);
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mazo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255,215,0,0.5);
+}
+
+.placeholder-img {
+  background: #2a1d0e;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  font-size: 2.5em;
+  padding: 30px 0;
+  margin-bottom: 10px;
+}
+
+/* Pantalla de tablero */
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 30px;
+}
+
+.zona-enemiga, .zona-propia, .mano-jugador {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.placeholder-carta {
+  width: 100px;
+  height: 150px;
+  background: #4a3b27;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f5deb3;
+  font-size: 0.9em;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+.mano {
+  background: #5b4631;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #2b1a0a;
+  border-top: 2px solid #d4af37;
+  color: #fceabb;
+}
+
+.btn-volver {
+  text-decoration: none;
+  color: #ffd700;
+  font-weight: bold;
+  border: 2px solid #ffd700;
+  padding: 8px 20px;
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-volver:hover {
+  background: #ffd700;
+  color: #2b1a0a;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at center, #3b2f1d 0%, #1b140d 100%);
+  color: #f5deb3;
+  font-family: 'Cinzel', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(to bottom, #4a2b0f, #2b1a0a);
+  color: #ffd700;
+  border-bottom: 3px solid #d4af37;
+  font-family: 'UnifrakturCook', cursive;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+.menu-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.menu-btn {
+  width: 250px;
+  text-align: center;
+  padding: 15px 0;
+  background: #4b2c11;
+  border: 3px solid #c9a343;
+  border-radius: 15px;
+  color: #f5deb3;
+  font-size: 1.5em;
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none; /* Quita el subrayado */
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+  display: inline-block; /* Para que se comporte como botón */
+}
+
+.menu-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  background: #5b3314;
+}
+
+/* Reglas */
+.contenido-reglas {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 40px;
+  background: #3c2b1a;
+  border: 3px solid #d4af37;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255,215,0,0.2);
+  line-height: 1.6;
+}
+
+.contenido-reglas h2 {
+  color: #ffd700;
+  border-bottom: 1px solid #d4af37;
+  padding-bottom: 5px;
+}
+
+.contenido-reglas ul, .contenido-reglas ol {
+  margin-left: 30px;
+}
+
+.btn-volver {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  padding: 8px 20px;
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-volver:hover {
+  background: #ffd700;
+  color: #2b1a0a;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #2b1a0a;
+  border-top: 2px solid #d4af37;
+  color: #fceabb;
+}
+/* --- Selección de mazo --- */
+.seleccion-mazo header p {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2em;
+  color: #fceabb;
+}
+
+.mazo-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+  flex-wrap: wrap;
+}
+
+.mazo-card {
+  background: #4b2c11;
+  color: #fff;
+  width: 260px;
+  text-align: center;
+  padding: 25px;
+  border-radius: 15px;
+  border: 3px solid #c9a343;
+  box-shadow: 0 0 25px rgba(255,215,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.mazo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255,215,0,0.5);
+  background: #5c3b17;
+}
+
+.mazo-card h2 {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2em;
+  color: #ffd700;
+}
+
+.placeholder-img {
+  background: #2a1d0e;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  font-size: 3em;
+  padding: 30px 0;
+  margin-bottom: 15px;
+}
+
+/* ------------------ Fondo del menú entre header y footer ------------------ */
+/* Usa la imagen Menu-Principal.jpeg en Assets/UI y centra los botones */
+.menu-container {
+  /* ocupa el espacio entre header y footer y centra su contenido */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  gap: 25px;
+  padding: 30px;
+  position: relative; /* para el overlay */
+  overflow: hidden;
+}
+
+.menu-container {
+  /* imagen situada SOLO dentro del contenedor (entre header y footer) */
+  background-image: url("../Assets/UI/Menu-Principal.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* overlay oscuro para garantizar legibilidad del texto y botones */
+.menu-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+  z-index: 1;
+}
+
+/* asegurar que el header y footer estén por encima de la imagen */
+header, footer {
+  position: relative;
+  z-index: 3;
+}
+
+/* botones por encima del overlay */
+.menu-container .menu-btn {
+  position: relative;
+  z-index: 2;
+  width: 260px;
+  padding: 14px 0;
+  background: rgba(75,44,17,0.95);
+  border: 3px solid #c9a343;
+  color: #f5deb3;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+  .menu-container .menu-btn { width: 92%; font-size: 1.05rem; }
+}
+
+/* fin: fondo del menú entre header y footer */
+
+/* ------------------ Fondo del tablero de batalla ------------------ */
+/* Aplica la imagen Tablero-Batalla.jpeg al área .board y mantiene las cartas visibles */
+body.tablero .board {
+  position: relative;
+  background-image: url("../Assets/UI/Tablero-Batalla.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 30px; /* ya definido pero reafirmo para consistencia */
+  gap: 30px;
+}
+
+/* overlay para ajustar contraste sin ocultar la textura */
+body.tablero .board::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.18));
+  z-index: 1;
+}
+
+/* Asegurar que las zonas y cartas estén por encima del overlay */
+body.tablero .zona-enemiga,
+body.tablero .zona-propia,
+body.tablero .mano-jugador,
+body.tablero .placeholder-carta {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hacer las cartas claramente visibles: fondo sólido, borde dorado y sombra */
+body.tablero .placeholder-carta {
+  background: rgba(74,59,39,0.95); /* ligeramente translúcido para sentir la textura */
+  border: 2px solid #d4af37;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  color: #f5deb3;
+}
+
+/* Ajustes responsive para el tablero */
+@media (max-width: 600px) {
+  body.tablero .board { padding: 16px; }
+  body.tablero .placeholder-carta { width: 90px; height: 130px; }
+}
+
+/* Fin: fondo del tablero de batalla */
+
+
+
