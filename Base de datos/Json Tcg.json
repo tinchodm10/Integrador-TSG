@@ -1,0 +1,74 @@
+{
+  "mazos"; [
+    {
+      "monarca": "Aurelion, el Radiante",
+      "reino": "Sol Dorado",
+      "lider": {
+        "nombre": "Aurelion, el Radiante",
+        "costo": 0,
+        "ataque": 5,
+        "defensa": 6,
+        "habilidad": "Gana +1 oro al comienzo de cada turno.",
+        "efecto": "Todas las unidades Caballeros reciben +1 defensa mientras Aurelion esté en juego."
+      },
+      "unidades": [
+        {"nombre": "Caballero del Alba", "costo": 2, "ataque": 3, "defensa": 2, "cantidad": 3},
+        {"nombre": "Paladín de la Aurora", "costo": 3, "ataque": 5, "defensa": 4, "cantidad": 3},
+        {"nombre": "Escudero Luminoso", "costo": 1, "ataque": 1, "defensa": 2, "cantidad": 3},
+        {"nombre": "Lancero Solar", "costo": 1, "ataque": 2, "defensa": 3, "cantidad": 3},
+        {"nombre": "Jinete del Alba", "costo": 2, "ataque": 3, "defensa": 2, "cantidad": 3},
+        {"nombre": "Grifo Dorado", "costo": 3, "ataque": 4, "defensa": 2, "cantidad": 3}
+      ],
+      "recursos": [
+        {"nombre": "Mina de Oro Real", "costo": 1, "efecto": "Produce 2 oro por turno.", "cantidad": 2},
+        {"nombre": "Ruta Comercial de los Siete Desiertos", "costo": 2, "efecto": "Duplica la ganancia de oro si no atacas.", "cantidad": 2},
+        {"nombre": "Mercado Dorado", "costo": 1, "efecto": "Permite cambiar 1 carta de tu mano por otra del mazo.", "cantidad": 2}
+      ],
+      "estructuras": [
+        {"nombre": "Muralla de Luz", "costo": 3, "defensa": 4, "efecto": "Da +2 defensa a todas las unidades en la primera línea.", "cantidad": 2},
+        {"nombre": "Templo del Sol Eterno", "costo": 3, "defensa": 3, "efecto": "Gana 1 oro adicional por turno.", "cantidad": 2},
+        {"nombre": "Santuario del Alba", "costo": 2, "defensa": 3, "efecto": "Cura 1 punto de defensa a todas las unidades cada turno.", "cantidad": 2}
+      ],
+      "hechizos": [
+        {"nombre": "Bendición Solar", "costo": 2, "efecto": "Todas tus unidades recuperan 1 punto de defensa.", "cantidad": 3},
+        {"nombre": "Tormenta de Luz", "costo": 3, "efecto": "Inflige 2 de daño a todas las unidades enemigas oscuras.", "cantidad": 3},
+        {"nombre": "Escudo de Luz", "costo": 2, "efecto": "Reduce en 2 daño a todas las unidades este turno.", "cantidad": 3}
+      ]
+    },
+    {
+      "monarca": "Valgor, el Conquistador",
+      "reino": "Hierro Carmesí",
+      "lider": {
+        "nombre": "Valgor, el Conquistador",
+        "costo": 0,
+        "ataque": 5,
+        "defensa": 6,
+        "habilidad": "Cada vez que destruyes una unidad enemiga, gana +1 ataque temporal.",
+        "efecto": "Tus unidades de tipo Guerrero cuestan 1 oro menos."
+      },
+      "unidades": [
+        {"nombre": "Soldado Carmesí", "costo": 1, "ataque": 2, "defensa": 2, "cantidad": 3},
+        {"nombre": "Comandante de Acero", "costo": 2, "ataque": 3, "defensa": 3, "cantidad": 3},
+        {"nombre": "Bestia de Hierro", "costo": 3, "ataque": 4, "defensa": 4, "cantidad": 3},
+        {"nombre": "Gólem de Metal", "costo": 4, "ataque": 5, "defensa": 5, "cantidad": 3},
+        {"nombre": "Jinete Carmesí", "costo": 2, "ataque": 3, "defensa": 2, "cantidad": 3},
+        {"nombre": "Guerrero del Yunque", "costo": 2, "ataque": 3, "defensa": 3, "cantidad": 3}
+      ],
+      "recursos": [
+        {"nombre": "Mina de Hierro Sangrante", "costo": 1, "efecto": "Gana 1 oro y 1 metal por turno.", "cantidad": 2},
+        {"nombre": "Depósito de Metal", "costo": 2, "efecto": "Guarda 2 metales y permite reforzar unidades.", "cantidad": 2},
+        {"nombre": "Taller de Armamento", "costo": 1, "efecto": "Reduce en 1 el costo de la próxima unidad jugada.", "cantidad": 2}
+      ],
+      "estructuras": [
+        {"nombre": "Fundición Bélica", "costo": 2, "defensa": 3, "efecto": "Reduce el costo de las unidades en 1 oro.", "cantidad": 2},
+        {"nombre": "Muralla de Hierro Carmesí", "costo": 3, "defensa": 4, "efecto": "Evita 2 de daño por ataque dirigido al reino.", "cantidad": 2},
+        {"nombre": "Fortaleza Carmesí", "costo": 4, "defensa": 5, "efecto": "Unidades adyacentes ganan +1 ataque y +1 defensa.", "cantidad": 2}
+      ],
+      "hechizos": [
+        {"nombre": "Furia del Conquistador", "costo": 2, "efecto": "Todas las unidades aliadas obtienen +2 ataque este turno.", "cantidad": 3},
+        {"nombre": "Lluvia de Fuego", "costo": 3, "efecto": "Destruye una estructura enemiga.", "cantidad": 3},
+        {"nombre": "Sangre de Acero", "costo": 3, "efecto": "Una unidad aliada recupera toda su defensa y gana +1 ataque.", "cantidad": 3}
+       ]
+    }, 
+  ]
+}
