@@ -1,0 +1,413 @@
+.carta {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 0;
+    margin: 3px;
+    min-width: 90px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.carta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.contenedor-carta {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-carta {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+.info-carta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(50, 30, 0, 0.95) 100%);
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.carta:hover .info-carta {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carta:hover .imagen-carta {
+    opacity: 0.1;
+}
+
+.info-carta h3 {
+    font-size: 0.85em;
+    margin: 0 0 5px 0;
+    color: #ffd700;
+    text-align: center;
+    font-weight: bold;
+}
+
+.info-carta p {
+    font-size: 0.65em;
+    margin: 2px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.mano {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    flex: 1;
+}
+
+.panel-mano .carta {
+    min-width: 100%;
+    max-width: 85px;
+    min-height: 35px;
+    padding: 0;
+    font-size: 0.60em;
+    margin: 0 auto;
+}
+
+.panel-mano .info-carta h3 {
+    font-size: 0.75em;
+    margin: 0 0 3px 0;
+    line-height: 1.1;
+}
+
+.panel-mano .info-carta p {
+    font-size: 0.5em;
+    margin: 1px 0;
+    line-height: 1.1;
+}
+
+.fila {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.tropas .carta, .estructuras .carta {
+    background: rgba(20, 20, 20, 0.8);
+}
+
+/* Estilos para las cartas del rival (Valgor - Rojo) */
+.carta-rival {
+    border: 2px solid #ff4444 !important;
+    background: rgba(40, 0, 0, 0.8) !important;
+}
+
+.carta-rival:hover {
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+}
+
+.carta-rival h3 {
+    color: #ff4444;
+}
+
+/* Animaciones de hechizos */
+@keyframes resplandor-aureo {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 215, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), inset 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
+@keyframes resplandor-magenta {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 0, 255, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 0, 255, 0.8), inset 0 0 20px rgba(255, 0, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(255, 0, 255, 0);
+    }
+}
+
+@keyframes resplandor-rojo {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 50, 50, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 50, 50, 0.8), inset 0 0 20px rgba(255, 50, 50, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(255, 50, 50, 0);
+    }
+}
+
+@keyframes resplandor-cian {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 255, 255, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.8), inset 0 0 20px rgba(0, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0, 255, 255, 0);
+    }
+}
+
+@keyframes resplandor-verde {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 255, 100, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 255, 100, 0.8), inset 0 0 20px rgba(0, 255, 100, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0, 255, 100, 0);
+    }
+}
+
+/* Clases de efecto para hechizos */
+.hechizo-aureo {
+    animation: resplandor-aureo 0.8s ease-out !important;
+}
+
+.hechizo-magenta {
+    animation: resplandor-magenta 0.8s ease-out !important;
+}
+
+.hechizo-rojo {
+    animation: resplandor-rojo 0.8s ease-out !important;
+}
+
+.hechizo-cian {
+    animation: resplandor-cian 0.8s ease-out !important;
+}
+
+.hechizo-verde {
+    animation: resplandor-verde 0.8s ease-out !important;
+}
+
+/* NOTIFICACIONES DE HECHIZOS */
+#notificaciones-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    max-width: 600px;
+    pointer-events: none;
+}
+
+.notificacion-hechizo {
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    animation: deslizar-notificacion 0.5s ease-out;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    pointer-events: auto;
+}
+
+.notificacion-hechizo.ofensivo {
+    border-color: #ff4444;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.8);
+}
+
+.notificacion-hechizo.defensivo {
+    border-color: #44ff44;
+    box-shadow: 0 0 20px rgba(68, 255, 68, 0.8);
+}
+
+@keyframes deslizar-notificacion {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes desvanecerse {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+
+.notificacion-hechizo.salir {
+    animation: desvanecerse 0.5s ease-out forwards;
+}
+
+/* Estilos específicos para Aurelion */
+.tablero-batalla {
+    background: rgba(60, 40, 20, 0.7);
+    border: 3px solid #ffd700;
+}
+
+.lado-enemigo {
+    background: rgba(40, 0, 0, 0.3);
+    border: 2px solid #ff4444;
+}
+
+.lado-enemigo .info-monarca {
+    color: #ff4444;
+}
+
+.lado-jugador {
+    background: rgba(139, 100, 0, 0.3);
+    border: 2px solid #ffd700;
+}
+
+.lado-jugador .info-monarca {
+    color: #ffd700;
+}
+
+.castillo {
+    background: rgba(139, 100, 0, 0.9);
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.castillo.propio {
+    background: rgba(10, 50, 10, 0.9);
+    border: 3px solid #ffd700;
+}
+
+.castillo.enemigo {
+    background: rgba(50, 10, 10, 0.9);
+    border: 3px solid #ff4444;
+}
+
+.castillo.propio .hp {
+    color: #ffd700;
+}
+
+.castillo.enemigo .hp {
+    color: #ff4444;
+}
+
+.panel-mano {
+    background: linear-gradient(180deg, #1a3a0a 0%, #0d2607 50%, #050a01 100%);
+    border-left: 3px solid #ffd700;
+}
+
+.panel-mano h3 {
+    color: #ffd700;
+}
+
+.zona-tropas.propia .fila-tropas .carta,
+.zona-estructuras.propia .fila-estructuras .carta {
+    border-color: #ffd700;
+}
+
+/* Estilos para animaciones de desaparición */
+.contenedor-animacion-desaparicion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.contenedor-animacion-desaparicion video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Estilos para imágenes de cartas */
+.imagen-carta {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.panel-mano .imagen-carta {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.zona-tropas .imagen-carta,
+.zona-estructuras .imagen-carta {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para objetivos válidos de hechizos */
+.objetivo-valido {
+    border: 3px solid #00ff00 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8) !important;
+    transform: scale(1.05);
+    cursor: pointer !important;
+}
+
+.objetivo-valido:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 0, 1) !important;
+    transform: scale(1.1);
+}
+
+/* Estilo del hechizo seleccionado */
+.hechizo-seleccionado {
+    border: 3px solid #ffd700 !important;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 1) !important;
+    background: rgba(255, 215, 0, 0.2) !important;
+    animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}

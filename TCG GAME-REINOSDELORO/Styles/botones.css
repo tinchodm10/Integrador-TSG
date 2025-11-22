@@ -1,0 +1,43 @@
+.btn-terminar {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(145deg, #a17c3e, #d4a556);
+    color: #fff;
+    border: 2px solid #8b6b35;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.btn-terminar:hover {
+    background: linear-gradient(145deg, #d4a556, #a17c3e);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-terminar:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-terminar:disabled {
+    background: #7a7a7a;
+    border-color: #5a5a5a;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Contenedor para el botón */
+.controles {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+}
