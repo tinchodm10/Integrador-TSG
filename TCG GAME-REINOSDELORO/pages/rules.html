@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reglas - Reinos del Oro</title>
+  <link rel="stylesheet" href="../Styles/menu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <audio autoplay loop id="bgMusic">
+    <source src="../Assets/Sonidos/Medievalmusic.mp3" type="audio/mpeg">
+  </audio>
+</head>
+<body class="reglas">
+  <header>
+    <h1>📜 Manual de Reglas Básicas</h1>
+    <a href="../index.html" class="btn-volver">⬅ Volver al menú</a>
+  </header>
+
+  <main class="contenido-reglas">
+    <section>
+      <h2>🎯 Concepto General</h2>
+      <p>Dos reinos se enfrentan por el control supremo. Cada jugador debe equilibrar su economía (oro), invocar tropas defensivas y ofensivas, construir estructuras defensivas y lanzar hechizos estratégicos. La victoria va para quien destruya el castillo enemigo o quien domine la economía del reino.</p>
+
+      <h2>🏆 Objetivo del Juego</h2>
+      <p>Gana si logras una de estas condiciones:</p>
+      <ul>
+        <li><strong>Destruir el castillo enemigo:</strong> Reduce su vida a 0.</li>
+        <li><strong>Dominio económico:</strong> Acumula 40 de oro antes que tu rival.</li>
+      </ul>
+
+      <h2>💰 Sistema de Oro</h2>
+      <ul>
+        <li>Comienza con <strong>2 de oro</strong>.</li>
+        <li>Ganas <strong>+3 de oro base</strong> cada turno.</li>
+        <li>El máximo de oro acumulado es <strong>10</strong>.</li>
+        <li>Las estructuras pueden otorgar oro adicional.</li>
+        <li>Solo gasta oro cuando juegas cartas (tropas, estructuras, hechizos).</li>
+      </ul>
+
+      <h2>🃏 Tipos de Cartas</h2>
+      <ul>
+        <li><strong>⚔️ Tropas:</strong> Unidades de combate con Ataque (ATK) y Defensa (DEF). Pueden atacar una vez por turno.</li>
+        <li><strong>🏰 Estructuras:</strong> Defensas estacionarias con valor de defensa (DEF). Contraatacan si son atacadas.</li>
+        <li><strong>✨ Hechizos:</strong> Efectos mágicos de un solo uso. Pueden aumentar defensas, reducir ataques, o afectar múltiples objetivos.</li>
+        <li><strong>🏯 Castillo:</strong> Tu base con 30 HP. Si llega a 0, pierdes la partida.</li>
+      </ul>
+
+      <h2>⏳ Fases del Turno</h2>
+      <ol>
+        <li><strong>🪙 Fase de Oro:</strong> Obtienes 3 de oro (máximo 10). Las estructuras pueden aumentar este valor.</li>
+        <li><strong>📥 Fase de Robo:</strong> Robas 1 carta de tu mazo. Tu mano no puede exceder 4 cartas.</li>
+        <li><strong>⚡ Fase de Acción:</strong> Puedes:
+          <ul>
+            <li>Jugar cartas (siempre que tengas suficiente oro).</li>
+            <li>Atacar con tus tropas (máximo una vez por tropa, por turno).</li>
+            <li>Lanzar hechizos.</li>
+            <li>Terminar tu turno cuando lo desees.</li>
+          </ul>
+        </li>
+        <li><strong>🔄 Fase de Fin de Turno:</strong> Las tropas destruidas se remueven del campo. El turno pasa al oponente.</li>
+      </ol>
+
+      <h2>⚔️ Sistema de Combate</h2>
+      <p><strong>¿Cómo atacan las tropas?</strong></p>
+      <ul>
+        <li>Cada tropa puede atacar <strong>una sola vez por turno</strong>.</li>
+        <li>Las tropas deben atacar otras tropas primero (si existen en el campo enemigo).</li>
+        <li>Si no hay tropas enemigas, pueden atacar estructuras.</li>
+        <li>Si no hay estructuras enemigas, pueden atacar el castillo directamente.</li>
+      </ul>
+
+      <p><strong>¿Cómo se resuelve un ataque?</strong></p>
+      <ul>
+        <li>El ataque reduce la DEFENSA del objetivo en cantidad igual al ATK del atacante.</li>
+        <li>Si la defensa llega a 0 o menos, la unidad es destruida.</li>
+        <li>Si el objetivo sobrevive, <strong>contraataca</strong> reduciendo la defensa del atacante.</li>
+        <li>Ambas unidades pueden ser destruidas en el mismo combate.</li>
+      </ul>
+
+      <p><strong>Ejemplo de combate:</strong></p>
+      <ul>
+        <li>Tu Tropa A (ATK: 3, DEF: 2) ataca a Tropa Enemiga B (ATK: 2, DEF: 3).</li>
+        <li>Defensa de B: 3 - 3 = 0 → <strong>B es destruida.</strong></li>
+        <li>A sobrevive sin contraataque.</li>
+      </ul>
+
+      <h2>🎯 Estrategia Defensiva</h2>
+      <ul>
+        <li>Las estructuras actúan como escudos. Contraatacan con su valor de DEF.</li>
+        <li>Los hechizos defensivos como "Blindaje" pueden aumentar la defensa de tus tropas o estructuras.</li>
+        <li>Siempre mantén defensas en el campo para proteger tu castillo.</li>
+      </ul>
+
+      <h2>✨ Hechizos Especiales</h2>
+      <p>Los hechizos pueden tener diferentes efectos:</p>
+      <ul>
+        <li><strong>Ofensivos:</strong> Reducen la defensa de tropas enemigas (ej: "Destello Solar").</li>
+        <li><strong>Defensivos:</strong> Aumentan la defensa de tus unidades (ej: "Blindaje", "Escudo de Luz").</li>
+        <li><strong>De Área:</strong> Afectan a múltiples unidades (ej: "Renacer Dorado" aumenta ATK a todas tus tropas).</li>
+      </ul>
+
+      <h2>🤖 IA (Oponente)</h2>
+      <ul>
+        <li>La IA comienza con <strong>1 de oro</strong> (más débil que el jugador).</li>
+        <li>Juega automáticamente intentando maximizar su defensa primero.</li>
+        <li>Usa hechizos estratégicamente para protegerse o atacar.</li>
+      </ul>
+
+      <h2>📋 Reglas Importantes</h2>
+      <ul>
+        <li>No puedes jugar cartas si no tienes suficiente oro.</li>
+        <li>Tu mano está limitada a <strong>máximo 4 cartas</strong>.</li>
+        <li>Las tropas solo pueden atacar <strong>una vez por turno</strong>.</li>
+        <li>El castillo no puede atacar, solo defenderse.</li>
+        <li>Los hechizos se usan de inmediato y se descartan.</li>
+        <li>Las estructuras destruidas se remueven del campo.</li>
+      </ul>
+
+      <h2>💡 Consejos Estratégicos</h2>
+      <ul>
+        <li><strong>Equilibrio:</strong> No solo ataquen, también defiendan. Un castillo protegido es un castillo vivo.</li>
+        <li><strong>Gestiona tu oro:</strong> A veces es mejor esperar a tener más oro para jugar cartas poderosas.</li>
+        <li><strong>Conoce tus tropas:</strong> Cada unidad tiene diferentes valores de ATK/DEF. Úsalas según la situación.</li>
+        <li><strong>Hechizos en el momento correcto:</strong> Un hechizo defensivo en el turno correcto puede cambiar el juego.</li>
+        <li><strong>Observa al enemigo:</strong> Anticipa sus movimientos y prepárate defensivamente.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

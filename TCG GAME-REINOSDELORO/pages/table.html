@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo de Batalla - Reinos del Oro</title>
+    <link rel="stylesheet" href="../Styles/menu.css">
+    <link rel="stylesheet" href="../Styles/cartas.css">
+    <link rel="stylesheet" href="../Styles/botones.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <audio autoplay loop id="bgMusic">
+      <source src="../Assets/Sonidos/Medievalmusic.mp3" type="audio/mpeg">
+    </audio>
+</head>
+<body class="campo batalla">
+    <header class="encabezado">
+        <h1>⚔️ Campo de Batalla ⚔️</h1>
+    </header>
+
+    <div class="contenedor-principal">
+        <!-- TABLERO CENTRAL -->
+        <div class="tablero-batalla">
+            <!-- LADO IZQUIERDO - ENEMIGO (IA) -->
+            <div class="lado-enemigo">
+                <div class="info-monarca">
+                    <h3>⚒️ Valgor</h3>
+                </div>
+                
+                <div class="castillo enemigo">
+                    <h2>🏰</h2>
+                    <div class="hp">❤️ <span id="hp-enemigo">30</span></div>
+                </div>
+
+                <div class="zona-tropas enemiga">
+                    <div class="fila-tropas">
+                        <div class="carta" data-posicion="0">Tropa 1</div>
+                        <div class="carta" data-posicion="1">Tropa 2</div>
+                        <div class="carta" data-posicion="2">Tropa 3</div>
+                    </div>
+                </div>
+
+                <div class="zona-estructuras enemiga">
+                    <div class="fila-estructuras">
+                        <div class="carta">Estructura 1</div>
+                        <div class="carta">Estructura 2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTRO - INFORMACIÓN -->
+            <div class="centro-batalla">
+                <button id="btn-terminar-turno" class="btn-terminar">Terminar Turno</button>
+                <div class="oro-y-boton">
+                    <div class="oro-display">
+                        <!-- ORO ENEMIGO (ARRIBA) -->
+                        <div class="oro-container oro-enemigo-container">
+                            <div class="oro-label">⚒️ Oro Enemigo</div>
+                            <div class="oro-ia">
+                                <span>🪙</span> <span id="oro-ia">2</span>
+                            </div>
+                        </div>
+                        
+                        <!-- DIVISOR -->
+                        <div class="vs">VS</div>
+                        
+                        <!-- ORO JUGADOR (ABAJO) -->
+                        <div class="oro-container oro-jugador-container">
+                            <div class="oro-label">🦁 Tu Oro</div>
+                            <div class="oro-jugador">
+                                <span>🪙</span> <span id="oro-cantidad">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LADO DERECHO - JUGADOR (TÚ) -->
+            <div class="lado-jugador">
+                <div class="info-monarca">
+                    <h3>🦁 Aurelion</h3>
+                </div>
+                
+                <div class="castillo propio">
+                    <h2>🏰</h2>
+                    <div class="hp">❤️ <span id="hp-jugador">30</span></div>
+                </div>
+
+                <div class="zona-tropas propia">
+                    <div class="fila-tropas">
+                        <div class="carta" data-posicion="0">Tropa 1</div>
+                        <div class="carta" data-posicion="1">Tropa 2</div>
+                        <div class="carta" data-posicion="2">Tropa 3</div>
+                    </div>
+                </div>
+
+                <div class="zona-estructuras propia">
+                    <div class="fila-estructuras">
+                        <div class="carta">Estructura 1</div>
+                        <div class="carta">Estructura 2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL DERECHO - MANO DEL JUGADOR -->
+        <div class="panel-mano">
+            <h3>Tu Mano</h3>
+            <div class="mano"></div>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR DE NOTIFICACIONES -->
+    <div id="notificaciones-container"></div>
+
+    <!-- MENÚ DE PAUSA -->
+    <div class="menu-pausa">
+        <button class="btn-menu" id="btn-menu-toggle">☰</button>
+        <div class="menu-opciones" id="menu-opciones">
+            <button id="btn-volver-juego" class="opcion-menu">Volver al Juego</button>
+            <button id="btn-reiniciar-juego" class="opcion-menu">Reiniciar Juego</button>
+            <button id="btn-volver-inicio" class="opcion-menu">Volver al Inicio</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../Scripts/datosMazos.js"></script>
+    <script src="../Scripts/imagenesCartas.js"></script>
+    <script src="../Scripts/animacionesCartas.js"></script>
+    <script src="../Scripts/juego.js"></script>
+    
+    <!-- Script para el menú de pausa -->
+    <script>
+        // Funcionalidad del menú de pausa
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnMenuToggle = document.getElementById('btn-menu-toggle');
+            const menuOpciones = document.getElementById('menu-opciones');
+            const btnVolverJuego = document.getElementById('btn-volver-juego');
+            const btnReiniciarJuego = document.getElementById('btn-reiniciar-juego');
+            const btnVolverInicio = document.getElementById('btn-volver-inicio');
+
+            // Alternar menú al hacer clic en el botón
+            btnMenuToggle.addEventListener('click', function() {
+                menuOpciones.classList.toggle('activo');
+            });
+
+            // Cerrar menú al hacer clic en cualquier lado
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.menu-pausa')) {
+                    menuOpciones.classList.remove('activo');
+                }
+            });
+
+            // Opción: Volver al juego (cierra el menú)
+            btnVolverJuego.addEventListener('click', function() {
+                menuOpciones.classList.remove('activo');
+                console.log('Volviendo al juego...');
+            });
+
+            // Opción: Reiniciar juego
+            btnReiniciarJuego.addEventListener('click', function() {
+                if (confirm('¿Estás seguro de que quieres reiniciar el juego?')) {
+                    // Limpiar localStorage y recargar
+                    localStorage.removeItem('estadoJuego');
+                    location.reload();
+                }
+            });
+
+            // Opción: Volver al inicio
+            btnVolverInicio.addEventListener('click', function() {
+                if (confirm('¿Estás seguro de que quieres volver al menú principal?')) {
+                    // Limpiar localStorage y redirigir
+                    localStorage.removeItem('estadoJuego');
+                    location.href = '../index.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

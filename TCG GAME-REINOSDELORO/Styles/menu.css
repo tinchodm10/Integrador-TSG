@@ -1,0 +1,1038 @@
+
+/* Fuente medieval y colores antiguos */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  background: radial-gradient(ellipse at center, #3b2f1d 0%, #1b140d 100%);
+  color: #f5deb3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fondo especial para la página de batalla */
+body.batalla {
+  background: rgba(20, 15, 8, 0.95);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+body.batalla::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 1;
+}
+
+header {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(to bottom, #4a2b0f, #2b1a0a);
+  color: #ffd700;
+  border-bottom: 3px solid #d4af37;
+  font-family: 'UnifrakturCook', cursive;
+  position: relative;
+  z-index: 100;
+}
+
+/* Ocultar header en la página de batalla */
+body.batalla header {
+  display: none;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #fceabb;
+}
+
+/* Pantalla de inicio */
+.mazo-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+  flex-wrap: wrap;
+}
+
+.mazo-card {
+  background: #4b2c11;
+  color: #fff;
+  width: 260px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  border: 3px solid #c9a343;
+  box-shadow: 0 0 25px rgba(255,215,0,0.2);
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mazo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255,215,0,0.5);
+}
+
+.placeholder-img {
+  background: #2a1d0e;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  font-size: 2.5em;
+  padding: 30px 0;
+  margin-bottom: 10px;
+}
+
+
+body {
+  background: url('../Assets/UI/Tablero-Batalla.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Cinzel', serif;
+  color: #ffd700;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.titulo {
+  font-size: 2.2em;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* 🔶 Contenedor Principal - Layout Principal */
+.contenedor-principal {
+  display: flex;
+  gap: 6px;
+  padding: 8px 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 100;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* 🔶 Tablero de Batalla - Layout Versus */
+.tablero-batalla {
+  display: grid;
+  grid-template-columns: 1fr 75px 1fr;
+  gap: 4px;
+  padding: 6px;
+  flex: 1;
+  background: rgba(60, 40, 20, 0.7);
+  border: 3px solid gold;
+  border-radius: 15px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.7);
+  min-height: auto;
+  position: relative;
+  z-index: 100;
+}
+
+/* Lado del Enemigo (Izquierda) */
+.lado-enemigo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 3px;
+  background: rgba(40, 0, 0, 0.3);
+  border: 2px solid #ff4444;
+  border-radius: 10px;
+}
+
+.lado-enemigo .info-monarca {
+  color: #ff4444;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Lado del Jugador (Derecha) */
+.lado-jugador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 3px;
+  background: rgba(139, 100, 0, 0.3);
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+}
+
+.lado-jugador .info-monarca {
+  color: #ffd700;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Centro - Información */
+.centro-batalla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(80, 60, 20, 0.5);
+  border: 2px solid gold;
+  border-radius: 10px;
+  position: relative;
+  width: auto;
+}
+
+.oro-y-boton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  position: relative;
+}
+
+.oro-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.oro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  min-width: 100px;
+}
+
+.oro-enemigo-container {
+  background: rgba(139, 0, 0, 0.4);
+  border: 2px solid #cc3333;
+}
+
+.oro-jugador-container {
+  background: rgba(139, 100, 0, 0.4);
+  border: 2px solid #ffd700;
+}
+
+.oro-label {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 0.75em;
+  text-align: center;
+}
+
+.oro-display .vs {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+
+.centro-batalla .btn-terminar:hover {
+  background: rgba(200, 0, 0, 0.9);
+  box-shadow: 0 0 15px rgba(255, 100, 100, 0.6);
+}
+
+#btn-terminar-turno {
+  background: rgba(139, 0, 0);
+  border: 2px solid #ff6b6b;
+  color: #ffd700;
+  padding: 2px 3px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.60em;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+  position: fixed;
+  top: 2.5%;
+  left: 38.7%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  pointer-events: auto;
+  white-space: nowrap;
+  width: 120px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+#btn-terminar-turno:hover {
+  background: rgba(200, 0, 0, 0.9);
+  box-shadow: 0 0 15px rgba(255, 100, 100, 0.6);
+}
+
+.oro-jugador, .oro-ia {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  padding: 6px 8px;
+  color: #ffd700;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85em;
+  min-width: 80px;
+  justify-content: center;
+}
+
+/* Castillo */
+.castillo {
+  background: rgba(60, 40, 10, 0.8);
+  border: 4px solid #cc9900;
+  border-radius: 12px;
+  width: 85px;
+  height: 85px;
+  padding: 5px;
+  text-align: center;
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.castillo.enemigo {
+  border-color: #ff6b6b;
+}
+
+.castillo h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.hp {
+  background: #8b0000;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 3px 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-top: 3px;
+}
+
+/* Zonas de Tropas */
+.zona-tropas, .zona-estructuras {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.fila-tropas, .fila-estructuras {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Cartas en batalla */
+.zona-tropas .carta, .zona-estructuras .carta {
+  background: rgba(20, 20, 20, 0.8);
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  padding: 2px;
+  width: 58px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.55em;
+  text-align: center;
+}
+
+.zona-tropas .carta:hover, .zona-estructuras .carta:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Cartas del rival */
+.lado-enemigo .carta-rival {
+  border: 2px solid #ff4444 !important;
+  background: rgba(40, 0, 0, 0.8) !important;
+}
+
+.lado-enemigo .carta-rival:hover {
+  box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+}
+
+/* Panel Lateral - Mano del Jugador */
+.panel-mano {
+  flex: 0 0 300px;
+  padding: 1px;
+  background: rgba(40, 30, 10, 0.6);
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+  position: relative;
+  z-index: 100;
+}
+
+.panel-mano h3 {
+  margin: 0 0 2px 0;
+  color: #ffd700;
+  font-size: 0.8em;
+  text-align: center;
+  width: 100%;
+}
+
+.panel-mano .mano {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.panel-mano .btn-volver {
+  text-decoration: none;
+  color: #ffd700;
+  font-weight: bold;
+  border: 2px solid #ffd700;
+  padding: 1px 2px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+  font-size: 0.45em;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.panel-mano .btn-volver:hover {
+  background: #ffd700;
+  color: #2b1a0a;
+}
+
+/* Mano del Jugador (anterior - eliminado) */
+.mano-jugador {
+  display: none;
+}
+
+/* Controles (anterior - eliminado) */
+.controles {
+  display: none;
+}
+
+.hp {
+  background: #8b0000;
+  border-radius: 12px;
+  display: inline-block;
+  padding: 4px 10px;
+  color: white;
+  font-weight: bold;
+}
+
+/* 🪵 Filas de estructuras/tropas */
+.fila {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* 🃏 Cartas */
+.carta {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid gold;
+  border-radius: 6px;
+  width: 90px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.carta:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* ✋ Mano del jugador */
+.mano {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+.btn-volver {
+  text-decoration: none;
+  color: #ffd700;
+  font-weight: bold;
+  border: 2px solid #ffd700;
+  padding: 8px 20px;
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-volver:hover {
+  background: #ffd700;
+  color: #2b1a0a;
+}
+
+/*/* 💰 Indicador de oro fijo en pantalla */
+.oro-box {
+  position: fixed;
+  bottom: 20px;
+  left: 25px;
+  background: rgba(40, 25, 10, 0.9);
+  border: 2px solid gold;
+  border-radius: 12px;
+  color: #ffd700;
+  font-family: 'Cinzel', serif;
+  padding: 10px 16px;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  z-index: 9999; /* 🔥 siempre encima de todo */
+}
+
+.oro-icon {
+  font-size: 1.3em;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at center, #3b2f1d 0%, #1b140d 100%);
+  color: #f5deb3;
+  font-family: 'Cinzel', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(to bottom, #4a2b0f, #2b1a0a);
+  color: #ffd700;
+  border-bottom: 3px solid #d4af37;
+  font-family: 'UnifrakturCook', cursive;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+.menu-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.menu-btn {
+  width: 250px;
+  text-align: center;
+  padding: 15px 0;
+  background: #4b2c11;
+  border: 3px solid #c9a343;
+  border-radius: 15px;
+  color: #f5deb3;
+  font-size: 1.5em;
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none; /* Quita el subrayado */
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+  display: inline-block; /* Para que se comporte como botón */
+}
+
+.menu-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  background: #5b3314;
+}
+
+/* Reglas */
+.contenido-reglas {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 40px;
+  background: #3c2b1a;
+  border: 3px solid #d4af37;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255,215,0,0.2);
+  line-height: 1.6;
+}
+
+.contenido-reglas h2 {
+  color: #ffd700;
+  border-bottom: 1px solid #d4af37;
+  padding-bottom: 5px;
+}
+
+.contenido-reglas ul, .contenido-reglas ol {
+  margin-left: 30px;
+}
+
+.btn-volver {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  padding: 8px 20px;
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-volver:hover {
+  background: #ffd700;
+  color: #2b1a0a;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #2b1a0a;
+  border-top: 2px solid #d4af37;
+  color: #fceabb;
+  position: relative;
+  z-index: 100;
+}
+/* --- Selección de mazo --- */
+.seleccion-mazo header p {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2em;
+  color: #fceabb;
+}
+
+.mazo-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+  flex-wrap: wrap;
+}
+
+.mazo-card {
+  background: #4b2c11;
+  color: #fff;
+  width: 260px;
+  text-align: center;
+  padding: 25px;
+  border-radius: 15px;
+  border: 3px solid #c9a343;
+  box-shadow: 0 0 25px rgba(255,215,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.mazo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255,215,0,0.5);
+  background: #5c3b17;
+}
+
+.mazo-card h2 {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 2em;
+  color: #ffd700;
+}
+
+.placeholder-img {
+  background: #2a1d0e;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  font-size: 3em;
+  padding: 30px 0;
+  margin-bottom: 15px;
+}
+
+/* ------------------ Fondo del menú entre header y footer ------------------ */
+/* Usa la imagen Menu-Principal.jpeg en Assets/UI y centra los botones */
+.menu-container {
+  /* ocupa el espacio entre header y footer y centra su contenido */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;     /* centra horizontalmente */
+  gap: 25px;
+  padding: 30px;
+  position: relative; /* para el overlay */
+  overflow: hidden;
+}
+
+.menu-container {
+  /* imagen situada SOLO dentro del contenedor (entre header y footer) */
+  background-image: url("../Assets/UI/Menu-Principal.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* overlay oscuro para garantizar legibilidad del texto y botones */
+.menu-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+  z-index: 1;
+}
+
+/* asegurar que el header y footer estén por encima de la imagen */
+header, footer {
+  position: relative;
+  z-index: 3;
+}
+
+/* botones por encima del overlay */
+.menu-container .menu-btn {
+  position: relative;
+  z-index: 2;
+  width: 260px;
+  padding: 14px 0;
+  background: rgba(75,44,17,0.95);
+  border: 3px solid #c9a343;
+  color: #f5deb3;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+  .menu-container .menu-btn { width: 92%; font-size: 1.05rem; }
+}
+
+/* fin: fondo del menú entre header y footer */
+
+/* ------------------ Fondo del tablero de batalla ------------------ */
+/* Aplica la imagen Tablero-Batalla.jpeg al área .board y mantiene las cartas visibles */
+body.tablero .board {
+  position: relative;
+  background-image: url("../Assets/UI/Tablero-Batalla.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 30px; /* ya definido pero reafirmo para consistencia */
+  gap: 30px;
+}
+
+/* overlay para ajustar contraste sin ocultar la textura */
+body.tablero .board::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.18));
+  z-index: 1;
+}
+
+/* Asegurar que las zonas y cartas estén por encima del overlay */
+body.tablero .zona-enemiga,
+body.tablero .zona-propia,
+body.tablero .mano-jugador,
+body.tablero .placeholder-carta {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hacer las cartas claramente visibles: fondo sólido, borde dorado y sombra */
+body.tablero .placeholder-carta {
+  background: rgba(74,59,39,0.95); /* ligeramente translúcido para sentir la textura */
+  border: 2px solid #d4af37;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  color: #f5deb3;
+}
+
+/* Ajustes responsive para el tablero */
+@media (max-width: 600px) {
+  body.tablero .board { padding: 16px; }
+  body.tablero .placeholder-carta { width: 90px; height: 130px; }
+}
+
+/* Fin: fondo del tablero de batalla */
+
+/* Permitir scroll en páginas de selección y reglas */
+body.seleccion-mazo {
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body.reglas {
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Estilos para main en páginas con scroll */
+main.contenido-reglas {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px 20px;
+}
+
+/* Mejorar la apariencia del contenido de reglas */
+main.contenido-reglas section {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(74, 59, 39, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #d4af37;
+}
+
+main.contenido-reglas h2 {
+  color: #ffd700;
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+main.contenido-reglas p,
+main.contenido-reglas ul,
+main.contenido-reglas ol {
+  color: #f5deb3;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+main.contenido-reglas li {
+  margin-bottom: 8px;
+}
+
+/* Permitir que el header y footer no interfieran */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to top, #2b1a0a, #4a2b0f);
+  border-top: 3px solid #d4af37;
+  margin-top: 20px;
+}
+
+footer .btn-volver {
+  display: inline-block;
+  background: #4a2c11;
+  color: #ffd700;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 2px solid #c9a343;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+footer .btn-volver:hover {
+  background: #6a3c21;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  transform: scale(1.05);
+}
+
+/* 🎮 MENÚ DE PAUSA - ESQUINA SUPERIOR DERECHA */
+.menu-pausa {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  font-family: 'Cinzel', serif;
+}
+
+.btn-menu-toggle {
+  background: linear-gradient(135deg, #8b6914 0%, #c9a343 50%, #8b6914 100%);
+  border: 3px solid #ffd700;
+  border-radius: 2px;
+  color: #1a0f04;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-menu-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+.btn-menu-toggle:hover {
+  background: linear-gradient(135deg, #a87d1a 0%, #ffd700 50%, #a87d1a 100%);
+  transform: scale(1.08);
+  box-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-menu-toggle:active {
+  transform: scale(0.98);
+  box-shadow: 
+    inset 0 0 15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* MENÚ DESPLEGABLE */
+.menu-opciones {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: linear-gradient(to bottom, #3d2817 0%, #2a1a0e 100%);
+  border: 3px solid #c9a343;
+  border-top: 4px solid #ffd700;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 215, 0, 0.2),
+    0 0 20px rgba(0, 0, 0, 0.5);
+  min-width: 220px;
+  overflow: hidden;
+  animation: abrirMenu 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10000;
+}
+
+/* Decoración medieval en las esquinas */
+.menu-opciones::before,
+.menu-opciones::after {
+  content: '◆';
+  position: absolute;
+  color: #c9a343;
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+.menu-opciones::before {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-opciones::after {
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes abrirMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px) scaleY(0.85);
+  }
+  70% {
+    transform: translateY(5px) scaleY(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.menu-opciones.activo {
+  display: flex;
+  flex-direction: column;
+}
+
+.opcion-menu {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(201, 163, 67, 0.3);
+  border-left: 3px solid transparent;
+  color: #d4a556;
+  padding: 14px 18px;
+  text-align: left;
+  font-family: 'Cinzel', serif;
+  font-size: 1.05em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.opcion-menu::before {
+  content: '▸';
+  position: absolute;
+  left: 6px;
+  opacity: 0;
+  transition: all 0.25s ease;
+  color: #ffd700;
+}
+
+.opcion-menu:last-child {
+  border-bottom: none;
+}
+
+.opcion-menu:hover {
+  background: linear-gradient(to right, rgba(255, 215, 0, 0.15) 0%, transparent 100%);
+  border-left: 3px solid #ffd700;
+  padding-left: 22px;
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4), 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.opcion-menu:hover::before {
+  opacity: 1;
+}
+
+.opcion-menu:active {
+  background: rgba(255, 215, 0, 0.2);
+  transform: scale(0.98);
+}
+
+
+
+
