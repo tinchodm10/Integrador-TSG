@@ -64,6 +64,23 @@ class Juego {
         // Actualizar interfaz
         this.actualizarInterfaz();
 
+        // Agregar evento al botón de terminar turno
+        const btnTerminarTurno = document.getElementById('btn-terminar-turno');
+        if (btnTerminarTurno) {
+            btnTerminarTurno.addEventListener('click', () => {
+                console.log('Botón terminar turno clickeado');
+                if (this.turnoJugador) {
+                    console.log('Es turno del jugador, finalizando turno...');
+                    this.finalizarTurno();
+                    this.actualizarInterfaz();
+                } else {
+                    console.log('No es turno del jugador');
+                }
+            });
+        } else {
+            console.error('No se encontró el botón de terminar turno');
+        }
+
         // Si la IA empieza primero
         if (!this.turnoJugador) {
             setTimeout(() => this.turnoIA(), 1000);
@@ -1671,19 +1688,4 @@ document.addEventListener('DOMContentLoaded', () => {
         const juego = new Juego();
         juego.inicializarJuego();
     });
-    
-    // Añadir evento al botón de terminar turno
-    const btnTerminarTurno = document.getElementById('btn-terminar-turno');
-    if (btnTerminarTurno) {
-        btnTerminarTurno.addEventListener('click', () => {
-            console.log('Botón terminar turno clickeado');  // Debug
-            if (juego.turnoJugador) {
-                console.log('Es turno del jugador, finalizando turno...');  // Debug
-                juego.finalizarTurno();
-                juego.actualizarInterfaz();
-            }
-        });
-    } else {
-        console.error('No se encontró el botón de terminar turno');  // Debug
-    }
 });
